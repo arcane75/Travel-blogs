@@ -1,9 +1,11 @@
-import './App.css';
+// import './App.css';
+
+import Menubar from "./components/Menubar/Menubar";
 
 function App() {
   return (
-    <div className="App">
-    <h1>Rakib</h1>
+    <div>
+    <Menubar></Menubar>
     </div>
   );
 }
