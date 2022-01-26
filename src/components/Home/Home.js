@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Pagination } from '@mui/material';
 import Blogs from '../Blogs/Blogs';
 
 const Home = () => {
@@ -16,6 +16,7 @@ const Home = () => {
                 </Grid>
 
             </Grid>
+            
         </>
     );
 };

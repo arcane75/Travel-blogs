@@ -52,7 +52,7 @@ const Blog = (props) => {
                     <CardMedia
                         sx={{margin:'10px 0px 10px 0px'}}
                         component="img"
-                        height="200"
+                        height="250"
                         image={image}
                         alt="Paella dish"
                         
