@@ -42,7 +42,6 @@ const Blogs = () => {
     return (
         <div>
              <Pagination 
-            sx={{ marginTop: '50px'}} 
             count={pageCount} 
             page={page}
             variant="outlined" 

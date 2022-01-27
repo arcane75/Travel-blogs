@@ -3,12 +3,14 @@ import { Grid } from '@mui/material';
 import Blogs from '../Blogs/Blogs';
 import Sidebar from '../Sidebar/Sidebar';
 import Menubar from '../Menubar/Menubar';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
         <>
             <Menubar />
-            <Grid container sx={{ marginTop: '100px' }}>
+            <Banner />
+            <Grid container>
                 <Grid item md={3}>
                     <Sidebar />
                 </Grid>
