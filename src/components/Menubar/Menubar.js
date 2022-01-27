@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { AppBar, Button, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Button, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 import MenuDrawer from './MenuDrawer';
-const pages = ['About', 'Contact'];
+import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+import "./Menubar.css"
+
 const Menubar = () => {
-    const [value, setValue] = useState();
+
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down('md'));
     return (
@@ -13,27 +16,18 @@ const Menubar = () => {
                 <Toolbar>
                     <Typography>CSS</Typography>
 
-                    {
-                        isMatch ?
-                            (
-                                <>
-                                    {/* <Typography>CSS</Typography> */}
-                                    <MenuDrawer />
-                                </>
-                            ) :
-                            (
-                                <>
-                                    <Tabs sx={{ marginLeft: 'auto' }} textColor='inherit' value={value} onChange={(e, value) => setValue(value)} indicatorColor='secondary'>
+                    {isMatch ? (<> <MenuDrawer /> </>) : (
+                        <>
 
-                                        {
-                                            pages.map((page, index) => <Tab key={index} label={page} />)
-                                        }
+                            <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", margin: "auto" }} class='item' to="/home">Home</NavLink>
 
-                                    </Tabs>
+                            <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/home">About</NavLink>
 
-                                    <Button variant="secondary" color="error"><LoginIcon />Login</Button>
-                                </>
-                            )
+                            <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/myexperience">Add-Experience</NavLink>
+
+                            <Button variant="secondary" color="error"><LoginIcon />Login</Button>
+                        </>
+                    )
                     }
 
                 </Toolbar>
