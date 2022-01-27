@@ -1,25 +1,14 @@
 import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-import AboutUs from '../AboutUs/AboutUs';
-import AddPackage from '../AddPackage/AddPackage';
-import ContactUs from '../ContactUs/ContactUs';
-import Header from '../Header/Header';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
-import ManageProducts from '../ManageProducts/ManageProducts';
-import MyOrder from '../MyOrder/MyOrder';
-import ReviewRating from '../Review/ReviewRating';
-import './Admin.css';
 
 
 const AdminDash = () => {
-  const [control, setControl] = useState("addProducts");
+  const [control, setControl] = useState("addExperience");
   const { admin, logOut } = useAuth();
 
   return (
     <div className="admin-container">
-      <Header></Header>
-
+     
       <div className="row admin-container">
         <div className="col-md-3 admin-side">
           <div className="admin-area p-1">
@@ -111,20 +100,20 @@ const AdminDash = () => {
           {
             admin ?
               <div>
-                {control === "addProducts" && <AddPackage></AddPackage>}
+                {/* {control === "addProducts" && <AddPackage></AddPackage>}
                 {control === "manageAllOrder" && <ManageAllOrder></ManageAllOrder>}
                 {control === "makeAdmin" && <MakeAdmin></MakeAdmin>}
-                {control === "manageProducts" && <ManageProducts></ManageProducts>}
+                {control === "manageProducts" && <ManageProducts></ManageProducts>} */}
               </div>
               :
               <div>
-                {control === "myOrder" && <MyOrder></MyOrder>}
-                {control === "review" && <ReviewRating></ReviewRating>}
+                {/* {control === "myOrder" && <MyOrder></MyOrder>}
+                {control === "review" && <ReviewRating></ReviewRating>} */}
               </div>
           }
 
-          {control === "about" && <AboutUs></AboutUs>}
-          {control === "contact" && <ContactUs></ContactUs>}
+          {/* {control === "about" && <AboutUs></AboutUs>}
+          {control === "contact" && <ContactUs></ContactUs>} */}
 
         </div>
       </div>

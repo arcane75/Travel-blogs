@@ -9,7 +9,7 @@ const DetailsBlog = () => {
     const [detailBlog, setdetailBlog] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs/${blogId}`)
+        fetch(`https://stark-waters-96883.herokuapp.com/blogs/${blogId}`)
             .then(res => res.json())
             .then(data => setdetailBlog(data));
     }, [])

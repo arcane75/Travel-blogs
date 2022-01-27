@@ -12,7 +12,7 @@ const Blogs = () => {
     const [displayBlogs, setDisplayBlogs] = useState([]);
     
     useEffect(() => {
-        fetch("http://localhost:5000/blogs")
+        fetch("https://stark-waters-96883.herokuapp.com/blogs")
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);
@@ -20,7 +20,7 @@ const Blogs = () => {
     }, [])
     const size = 10;
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs?page=${page}&&size=${size}`)
+        fetch(`https://stark-waters-96883.herokuapp.com/blogs?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.blogs);

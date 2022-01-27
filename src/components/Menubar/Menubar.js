@@ -21,8 +21,8 @@ const Menubar = () => {
 
                             <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", margin: "auto" }} class='item' to="/home">Home</NavLink>
 
-                            <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/home">About</NavLink>
 
+                            <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/dashboard">ADMIN</NavLink>
 
                             {(user?.email) ?
                                 <>

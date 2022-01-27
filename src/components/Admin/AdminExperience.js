@@ -3,14 +3,13 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import Menubar from '../Menubar/Menubar';
 import UserLogin from '../UserLogin/UserLogin';
-const MyExperiencee = () => {
+const AdminExperience = () => {
     const { user } = UserLogin();
     const theme = createTheme();
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const onSubmit = (data) => {
         data.email = user?.email;
-        data.status = 'pending';
         fetch("https://stark-waters-96883.herokuapp.com/addExperience", {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -171,4 +170,4 @@ const MyExperiencee = () => {
     );
 };
 
-export default MyExperiencee;
+export default AdminExperience;
