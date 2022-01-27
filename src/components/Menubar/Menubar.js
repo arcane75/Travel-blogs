@@ -23,11 +23,13 @@ const Menubar = () => {
 
                             <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/home">About</NavLink>
 
-                            <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/myexperience">Add-Experience</NavLink>
 
                             {(user?.email) ?
-                                <Button variant='outlined' sx={{color: "white"}} onClick={logOut}>Logout {user?.displayName}</Button>
+                                <>
+                                    <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/myexperience">Add-Experience</NavLink>
 
+                                    <Button variant='outlined' sx={{ color: "white" }} onClick={logOut}>Logout {user?.displayName}</Button>
+                                </>
                                 :
                                 <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold" }} to="/userlogin">
                                     <Button variant="secondary" color="error"><LoginIcon />Login</Button></NavLink>

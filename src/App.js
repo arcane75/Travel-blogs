@@ -1,11 +1,12 @@
 // import './App.css';
 
-import { Route,BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import DetailsBlog from "./components/DetailsBlog/DetailsBlog";
 import Home from "./components/Home/Home";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import UserLogin from "./components/UserLogin/UserLogin";
 import AuthProvider from "./context/AuthProvider";
+import MyExperiencee from "./components/MyExperience/MyExperiencee";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
 
             <Route path="/detailsblog/:blogId" element={
               <PrivateRoute><DetailsBlog /></PrivateRoute>} />
-              
+
+            <Route path="/myexperience" element={<MyExperiencee />}/>
+
           </Routes>
         </Router>
       </AuthProvider>
