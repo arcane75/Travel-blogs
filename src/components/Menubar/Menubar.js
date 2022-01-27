@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import "./Menubar.css"
 
 const Menubar = () => {
-
+    const { user, logOut } = useAuth();
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down('md'));
     return (
@@ -25,7 +25,13 @@ const Menubar = () => {
 
                             <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold", marginRight: "10px" }} class='item' to="/myexperience">Add-Experience</NavLink>
 
-                            <Button variant="secondary" color="error"><LoginIcon />Login</Button>
+                            {(user?.email) ?
+                                <Button variant='outlined' onClick={logOut}>Logout {user?.displayName}</Button>
+
+                                :
+                                <NavLink style={{ textDecoration: 'none', color: "white", fontWeight: "bold" }} to="/userlogin">
+                                    <Button variant="secondary" color="error"><LoginIcon />Login</Button></NavLink>
+                            }
                         </>
                     )
                     }

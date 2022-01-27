@@ -2,7 +2,7 @@
 
 import { Route,BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
-// import UserLogin from "./components/UserLogin/UserLogin";
+import UserLogin from "./components/UserLogin/UserLogin";
 import AuthProvider from "./context/AuthProvider";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
 
             <Route path="/home" element={<Home />} />
 
-            {/* <Route path="/userlogin" element={<UserLogin />} /> */}
+            <Route path="/userlogin" element={<UserLogin />} />
           </Routes>
         </Router>
       </AuthProvider>
