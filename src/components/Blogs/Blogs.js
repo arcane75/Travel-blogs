@@ -1,5 +1,4 @@
 import { Pagination } from '@mui/material';
-import usePagination from '@mui/material/usePagination/usePagination';
 import React, { useEffect, useState } from 'react';
 import Blog from './Blog';
 
@@ -10,7 +9,7 @@ const Blogs = () => {
     const [pageCount, setPageCount] = useState(0);
     // blogss to be rendered on the UI
     const [displayBlogs, setDisplayBlogs] = useState([]);
-    
+
     useEffect(() => {
         fetch("https://stark-waters-96883.herokuapp.com/blogs")
             .then(res => res.json())
@@ -28,45 +27,51 @@ const Blogs = () => {
                 const count = data.count;
                 const pageNumber = Math.ceil(count / size);
                 setPageCount(pageNumber);
-                
+
             });
     }, [page])
-    
-    const handleChange = (e,v) => {
-         setPage(v);
+
+    const handleChange = (e, v) => {
+        setPage(v);
     };
 
     return (
         <div>
-             <Pagination 
-            count={pageCount} 
-            page={page}
-            variant="outlined" 
-            color="primary" 
-            shape="rounded" 
-            onChange={handleChange}
-            /> 
-            
+            <Pagination
+                count={pageCount}
+                page={page}
+                variant="outlined"
+                color="primary"
+                shape="rounded"
+                onChange={handleChange}
+            />
+
             {
-                displayBlogs.map(blog =>
-                    <Blog
-                        key={blog._id}
-                        blog={blog}
-                    >
-                    </Blog>
+
+                displayBlogs.map(blog => (
+                    blog.status !== 'Approved' ?
+
+                        (<Blog
+                            key={blog._id}
+                            blog={blog}
+                        >
+                        </Blog>)
+                        :
+                        null
+                )
                 )
             }
 
-            <Pagination 
-            sx={{ marginTop: '50px'}} 
-            count={pageCount} 
-            page={page}
-            variant="outlined" 
-            color="primary" 
-            shape="rounded" 
-            onChange={handleChange}
-            /> 
-          
+            <Pagination
+                sx={{ marginTop: '50px' }}
+                count={pageCount}
+                page={page}
+                variant="outlined"
+                color="primary"
+                shape="rounded"
+                onChange={handleChange}
+            />
+
 
         </div>
     );

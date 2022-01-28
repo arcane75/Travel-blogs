@@ -4,10 +4,11 @@ import React, { useEffect, useState } from 'react';
 const ManageBlogs = () => {
   const [allBlogs, setAllBlogs] = useState([]);
   console.log('allblogs', allBlogs);
+  const [status, setStatus] = useState('');
   const [control, setConrol] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://stark-waters-96883.herokuapp.com/blogs")
       .then((res) => res.json())
       .then((data) => setAllBlogs(data.blogs));
   }, [control]);
@@ -15,7 +16,7 @@ const ManageBlogs = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm('Are you sure?');
     if (proceed) {
-      fetch(`http://localhost:5000/deleteBlogs/${id}`, {
+      fetch(`https://stark-waters-96883.herokuapp.com/deleteBlogs/${id}`, {
         method: "DELETE",
         headers: { "content-type": "application/json" },
       })
@@ -29,17 +30,37 @@ const ManageBlogs = () => {
         });
     }
   }
+
+  const handleStatus = (id) => {
+    const newStatus = { status: 'Approved' };
+    setStatus(newStatus);
+    fetch(`https://stark-waters-96883.herokuapp.com/updateStatus/${id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(status)
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.modifiedCount > 0) {
+          alert('Updated Successfully');
+          setConrol(!control);
+        }
+      })
+  }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
+        <TableHead >
           <TableRow>
-            <TableCell>Title</TableCell>
-            <TableCell align="right">Category</TableCell>
-            <TableCell align="right">Transportations</TableCell>
-            <TableCell align="right">Expense</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell sx={{ color: "red", fontWeight: "bold" }}>Title</TableCell>
+            <TableCell sx={{ color: "red", fontWeight: "bold" }} align="center">Category</TableCell>
+            <TableCell sx={{ color: "red", fontWeight: "bold" }} align="right">Transportations</TableCell>
+            <TableCell sx={{ color: "red", fontWeight: "bold" }} align="right">expense</TableCell>
+            <TableCell sx={{ color: "red", fontWeight: "bold" }} align="right">Status</TableCell>
+            <TableCell sx={{ color: "red", fontWeight: "bold" }} align="right">Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -47,6 +68,7 @@ const ManageBlogs = () => {
             <TableRow
               key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+
             >
               <TableCell component="th" scope="row">
                 {row.title}
@@ -54,7 +76,13 @@ const ManageBlogs = () => {
               <TableCell align="right">{row.category}</TableCell>
               <TableCell align="right">{row.transportations}</TableCell>
               <TableCell align="right">{row.expense}</TableCell>
-              <TableCell align="right">{row.status}</TableCell>
+              <TableCell align="right">
+                <Button
+                  onClick={() => handleStatus(row._id)}
+                >
+                  {row.status}
+                </Button>
+              </TableCell>
               <TableCell align="right">
                 <Button
                   onClick={() => handleDelete(row._id)}

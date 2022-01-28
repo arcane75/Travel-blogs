@@ -8,6 +8,8 @@ import UserLogin from "./components/UserLogin/UserLogin";
 import AuthProvider from "./context/AuthProvider";
 import MyExperiencee from "./components/MyExperience/MyExperiencee";
 import AdminDash from "./components/Admin/AdminDash";
+import Error from "./components/Error/Error";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -24,14 +26,17 @@ function App() {
             <Route path="/detailsblog/:blogId" element={
               <PrivateRoute><DetailsBlog /></PrivateRoute>} />
 
-            <Route path="/myexperience" element={<MyExperiencee />}/>
+            <Route path="/myexperience" element={<MyExperiencee />} />
 
             <Route path="/dashboard" element={
               <PrivateRoute><AdminDash /></PrivateRoute>} />
 
+            <Route path="*" element={<Error />} />
+
           </Routes>
         </Router>
       </AuthProvider>
+      <Footer />
 
     </div>
   );

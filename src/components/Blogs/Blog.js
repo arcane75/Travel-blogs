@@ -14,7 +14,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 const Blog = (props) => {
-    const {_id, avatar, title, image,date, description} = props.blog || {};
+    const {_id, avatar, title, image,date, description,status} = props.blog || {};
 
    
     return (

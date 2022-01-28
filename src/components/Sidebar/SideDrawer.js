@@ -12,25 +12,12 @@ const SideDrawer = () => {
             <Drawer
                 open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
+                
             >
-                {/* <List>
-                    {
-                        pages.map((page, index) => (
-                            <ListItemButton onClick={() => setOpenDrawer(false)}key={index}>
-                                <ListItemIcon>
-                                    <ListItemText>
-                                        {page}
-                                    </ListItemText>
-                                </ListItemIcon>
-                            </ListItemButton>
-                        ))
-                    }
 
 
-                </List> */}
-
-                <Typography>Category</Typography>
-                <List>
+                <Typography sx={{ margin: '5px 15px', fontWeight:'bold' }}>Category</Typography>
+                <List sx={{backgroundColor:"#eee", color:"red"}}>
                     <ListItemButton onClick={() => setOpenDrawer(false)}>
                         <FormGroup >
                             <FormControlLabel
@@ -90,6 +77,95 @@ const SideDrawer = () => {
                     </ListItemButton>
                 </List>
 
+                <Typography sx={{ margin: '5px 15px' , fontWeight:'bold'}}>Ratings</Typography>
+                <List sx={{backgroundColor:"#eee", color:"red"}}>
+                    <ListItemButton onClick={() => setOpenDrawer(false)}>
+                        <FormGroup >
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="5 Stars"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="4 Stars"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="3 Stars"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="2 Stars"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="1 Star"
+                            />
+
+                        </FormGroup>
+                    </ListItemButton>
+                </List>
+
+                <Typography sx={{ margin: '5px 15px' , fontWeight:'bold'}}>Transportations
+
+                </Typography>
+                <List sx={{backgroundColor:"#eee", color:"red"}}>
+                    <ListItemButton onClick={() => setOpenDrawer(false)}>
+                        <FormGroup >
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="Airways"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="Roadways"
+                            />
+
+                            <FormControlLabel
+                                control={<Checkbox
+                                    // checked={checked}
+                                    // onChange={handleChange}
+                                    inputProps={{ 'aria-label': 'controlled' }}
+                                />}
+                                label="Waterways"
+                            />
+
+                        </FormGroup>
+                    </ListItemButton>
+                </List>
             </Drawer>
             <IconButton sx={{ marginLeft: 'auto', color: '#063960' }} onClick={() => setOpenDrawer(!openDrawer)}>
                 <MenuIcon />

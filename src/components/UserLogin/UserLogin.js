@@ -21,7 +21,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Menubar from "../Menubar/Menubar";
 
 const UserLogin = () => {
-    
+
     const [loginData, setLoginData] = useState({});
     const [isLogin, setIsLogin] = useState(false);
     const [error, setError] = useState('');
@@ -41,7 +41,7 @@ const UserLogin = () => {
     }
 
     const handleGoogleSignIn = () => {
-        signInUsingGoogle(navigate,location)
+        signInUsingGoogle(navigate, location)
     }
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -61,14 +61,14 @@ const UserLogin = () => {
 
     const handleLoginSubmit = e => {
         registerNewUser(loginData.email, loginData.password, loginData.name, navigate);
-        processLogin(loginData.email, loginData.password,navigate, location);
+        processLogin(loginData.email, loginData.password, navigate, location);
         e.preventDefault();
     }
     const theme = createTheme();
-   
+
     return (
         <>
-        <Menubar />
+            <Menubar />
             <ThemeProvider theme={theme}>
                 <Grid container component="main" sx={{ height: '100vh' }}>
                     <CssBaseline />
@@ -195,11 +195,10 @@ const UserLogin = () => {
                                         </Link>
                                     </Grid>
                                     <Grid item>
-                                        
-                                            <Button type="button" className="btn btn-primary " onClick={handleGoogleSignIn} >
-                                                <i className="fab fa-google"></i>Login with Google
-                                            </Button>
-                                        
+
+                                        <Button onClick={handleGoogleSignIn} ><i className="fab fa-google"> Login with Google</i> 
+                                        </Button>
+
                                     </Grid>
                                 </Grid>
 

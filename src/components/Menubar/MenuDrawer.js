@@ -1,8 +1,8 @@
-import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import {  Drawer, IconButton } from '@mui/material';
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
-const pages = ['About', 'Contact', 'Login'];
 const MenuDrawer = () => {
     const [openDrawer, setOpenDrawer] = useState(false);
     return (
@@ -11,21 +11,8 @@ const MenuDrawer = () => {
                 open={openDrawer}
                 onClose={() => setOpenDrawer(false)}
             >
-                <List>
-                    {
-                        pages.map((page, index) => (
-                            <ListItemButton onClick={() => setOpenDrawer(false)}key={index}>
-                                <ListItemIcon>
-                                    <ListItemText>
-                                        {page}
-                                    </ListItemText>
-                                </ListItemIcon>
-                            </ListItemButton>
-                        ))
-                    }
+                <Link style={{ textDecoration: 'none', color: "Black", fontWeight: "bold", padding:'15px'}} to='/home'>Home</Link>
 
-
-                </List>
             </Drawer>
             <IconButton sx={{ marginLeft: 'auto', color: 'white' }} onClick={() => setOpenDrawer(!openDrawer)}>
                 <MenuIcon />
