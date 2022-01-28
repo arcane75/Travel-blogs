@@ -2,7 +2,9 @@ import { Container, Grid, Typography, Button } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import Menubar from '../Menubar/Menubar';
+import AdminExperience from './AdminExperience';
 import MakeAdmin from './MakeAdmin';
+import ManageBlogs from './ManageBlogs';
 
 
 const AdminDash = () => {
@@ -36,11 +38,21 @@ const AdminDash = () => {
             </Container> */}
             <Container >
                 <Grid container sx={{ mt: 10 }}>
-                    <Grid item md={3}>
+                    <Grid item xs={12} md={3}>
                         <div>
                             <Button
                                 onClick={() => setControl("makeAdmin")}
                             >Make Admin</Button>
+                        </div>
+                        <div>
+                            <Button
+                                onClick={() => setControl("adminExperience")}
+                            >Admin Experience</Button>
+                        </div>
+                        <div>
+                            <Button
+                                onClick={() => setControl("manageblogs")}
+                            >Manage Blogs</Button>
                         </div>
                         <div>
                             <Button
@@ -49,8 +61,10 @@ const AdminDash = () => {
                         </div>
                     </Grid>
 
-                    <Grid item xs={10} md={7}>
+                    <Grid item xs={12} md={9}>
                         {control === "makeAdmin" && <MakeAdmin></MakeAdmin>}
+                        {control === "adminExperience" && <AdminExperience></AdminExperience>}
+                        {control === "manageblogs" && <ManageBlogs></ManageBlogs>}
                     </Grid>
 
                 </Grid>

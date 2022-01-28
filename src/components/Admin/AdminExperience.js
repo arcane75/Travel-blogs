@@ -27,7 +27,7 @@ const AdminExperience = () => {
             <Menubar />
             <Container>
                 <ThemeProvider theme={theme}>
-                    <Box sx={{ marginTop: "80px" }} style={{ backgroundColor: "#eee" }}>
+                    <Box sx={{ marginTop: "30px" }} style={{ backgroundColor: "#eee" }}>
 
                         <Typography sx={{ textAlign: "center", fontWeight: "bold", fontSize: "30px" }}> Add Experience</Typography>
 

@@ -15,8 +15,11 @@ import { Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 const Blog = (props) => {
     const {_id, avatar, title, image,date, description} = props.blog || {};
+
+   
     return (
         <div>
+          
              <Grid container sx={{ marginTop: '15px',borderRadius:'10px',boxShadow:'0 4px 21px -12px rgba(0, 0, 0, 0.66)', backgroundColor: '#18151f23' }}>
                 <Grid item xs={12} md={8} sx={{paddingRight:'0px'}}>
                     <CardHeader
@@ -64,6 +67,7 @@ const Blog = (props) => {
                 </Grid>
 
             </Grid>
+
         </div>
     );
 };

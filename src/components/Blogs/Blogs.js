@@ -33,11 +33,8 @@ const Blogs = () => {
     }, [page])
     
     const handleChange = (e,v) => {
-        // [...Array(pageCount).keys()]
-        // .map(number =>  setPage(number))
          setPage(v);
     };
-
 
     return (
         <div>

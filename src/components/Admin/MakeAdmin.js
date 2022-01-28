@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://stark-waters-96883.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -30,7 +30,7 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2 className="mb-5">Make an Admin</h2>
+            <h2>Make an Admin</h2>
             <form onSubmit={handleAdminSubmit}>
                 <TextField
                     sx={{ width: '50%' }}
