@@ -12,166 +12,166 @@ const Sidebar = () => {
 
     return (
         <>
-        {
-            isMatch ?
-            (
-                <>
-                    <SideDrawer/>
-                </>
-            ) : 
-            (
-                <Container sx={{ marginLeft: '30px' }}>
+            {
+                isMatch ?
+                    (
+                        <>
+                            <SideDrawer />
+                        </>
+                    ) :
+                    (
+                        <Container sx={{ marginLeft: '30px' }}>
 
-{/* ----------------------------------------------------------------
+                            {/* ----------------------------------------------------------------
                             Category 
 -------------------------------------------------------------*/}
-            <Typography>Category</Typography>
-            <FormGroup >
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Weekend Break"
-                />
+                            <Typography sx={{ fontWeight: 'bold' }}>Category</Typography>
+                            <FormGroup >
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Weekend Break"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Package Holiday"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Package Holiday"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Budget Traveler"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Budget Traveler"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Private Tour"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Private Tour"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Group Tour"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Group Tour"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Domestic Tourism"
-                />
-            </FormGroup>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Domestic Tourism"
+                                />
+                            </FormGroup>
 
 
-{/* ----------------------------------------------------------------
+                            {/* ----------------------------------------------------------------
                             Rating 
 -------------------------------------------------------------*/}
-            <Typography>Ratings</Typography>
-            <FormGroup >
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="5 Stars"
-                />
+                            <Typography sx={{ fontWeight: 'bold' }}>Ratings</Typography>
+                            <FormGroup >
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="5 Stars"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="4 Stars"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="4 Stars"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="3 Stars"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="3 Stars"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="2 Stars"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="2 Stars"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="1 Star"
-                />
-            </FormGroup>
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="1 Star"
+                                />
+                            </FormGroup>
 
-{/* ----------------------------------------------------------------
+                            {/* ----------------------------------------------------------------
                             Transportation
 -------------------------------------------------------------*/}
-            <Typography>Transportations</Typography>
-            <FormGroup >
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Airways"
-                />
+                            <Typography sx={{ fontWeight: 'bold' }}>Transportations</Typography>
+                            <FormGroup >
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Airways"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Roadways"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Roadways"
+                                />
 
-                <FormControlLabel
-                    control={<Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />}
-                    label="Waterways"
-                />
+                                <FormControlLabel
+                                    control={<Checkbox
+                                        checked={checked}
+                                        onChange={handleChange}
+                                        inputProps={{ 'aria-label': 'controlled' }}
+                                    />}
+                                    label="Waterways"
+                                />
 
-             
-            </FormGroup>
-        </Container>
-            )
-        }
-        
+
+                            </FormGroup>
+                        </Container>
+                    )
+            }
+
         </>
     );
 };

@@ -6,9 +6,9 @@ import "./Footer.css";
 const Footer = () => {
   return (
 
-        <Typography sx={{mt:3, textAlign:'center', color:'white', padding:'15px 0'}} style={{ backgroundColor: ' rgba(0, 0, 0, 0.8)' }}>
-          © 2022 Copyright: Travel
-        </Typography>
+    <Typography sx={{ mt: 3, textAlign: 'center', color: 'white', padding: '15px 0' }} style={{ backgroundColor: ' rgba(0, 0, 0, 0.8)' }}>
+      © 2022 Copyright: Travel
+    </Typography>
 
 
   );

@@ -54,20 +54,20 @@ const DetailsBlog = () => {
                             </Typography>
                         </CardContent>
 
-                        <Typography sx={{ml:2}} variant="body2" color="text.secondary">
-                           Location: {detailBlog.location}
+                        <Typography sx={{ ml: 2 }} variant="body2" color="text.secondary">
+                            Location: {detailBlog.location}
                         </Typography>
 
-                        <Typography sx={{ml:2}} variant="body2" color="text.secondary">
-                           Travel Expense: ${detailBlog.expense}
+                        <Typography sx={{ ml: 2 }} variant="body2" color="text.secondary">
+                            Travel Expense: ${detailBlog.expense}
                         </Typography>
 
-                        <Typography sx={{ml:2}} variant="body2" color="text.secondary">
-                           Travel Transportation: {detailBlog.transportations}
+                        <Typography sx={{ ml: 2 }} variant="body2" color="text.secondary">
+                            Travel Transportation: {detailBlog.transportations}
                         </Typography>
 
-                        <Typography sx={{ml:2}} variant="body2" color="text.secondary">
-                           Travel Category: {detailBlog.category}
+                        <Typography sx={{ ml: 2 }} variant="body2" color="text.secondary">
+                            Travel Category: {detailBlog.category}
                         </Typography>
 
                         <CardActions disableSpacing>

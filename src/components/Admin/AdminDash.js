@@ -16,7 +16,7 @@ const AdminDash = () => {
             <Menubar />
             {
                 admin ?
-                    <Container sx={{minHeight:'100vh'}}>
+                    <Container sx={{ minHeight: '100vh' }}>
                         <Grid container sx={{ mt: 10 }}>
                             <Grid item xs={12} md={3}>
                                 <div>
